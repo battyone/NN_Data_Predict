@@ -1,40 +1,25 @@
+#import libraries
 import numpy as np
 import time
 import matplotlib.pyplot as plt
 
-print("Welcome to the neural network program!!")
-print("")
-
-print("Throughout the initiation Ill ask for parameters")
-print("")
-
-#variables
-#print("Please type number of hidden layers")
-#n = input()
+#hidden layer is set here
 n_hidden = 3
-#print("Please type input size")
-#n = input()
+#input value for x
 n_in = 5
-#print("Please type output size")
-#n = input()
+#output value for y
 n_out = 5
-#print("number of samples to play with?")
-#n = input()
+#number of samples to test
 n_sample = 30
 
-#hyperparameters
-#print("Type learning rate value ?")
-#n = input()
+#learning rate can be set to anything
 learning_rate = 0.000003
-#print("Type mometum value")
-#n = input()
 momentum = 0.00003
 
-#non deterministic seeding
+#Sets the range of values for random
 np.random.seed(0)
 
 #transfer functions
-
 def sigmoid(x):
 	return 1.0/(1.0 + np.exp(-x))
 
@@ -52,11 +37,10 @@ def train(x, t, V, W, bv, bw):
 	A = np.dot(x, V) + bv
 	#Z = np.tanh(A)
 	Z = sigmoid(A)
-	
 	B = np.dot(Z, W) + bw
 	Y = sigmoid(B)
 	
-	#backward
+	#backpropagation
 	Ew = Y - t
 	#Ev = tanh_prime(A) * np.dot(W, Ew)
 	Ev = sigmoid_prime(A) * np.dot(W, Ew)
@@ -77,29 +61,25 @@ def predict(x, V, W, bv, bw):
 	return (sigmoid(B))
 	
 #create layers
-V = np.random.randn(n_in, n_hidden) #normal(scale=0.3, size=(n_in, n_hidden))
-W = np.random.randn(n_hidden, n_out) #normal(scale=0.3, size=(n_hidden, n_out))
-
+V = np.random.randn(n_in, n_hidden)
+W = np.random.randn(n_hidden, n_out)
 bv = np.zeros(n_hidden)
 bw = np.zeros(n_out)
-
 params = [V, W, bv, bw]
 
 #generate our data
 filename = 'input.csv'
 data = np.loadtxt(filename, delimiter=',')
 X = data[:63] / 100
-#X = np.random.binomial(1, 0.5, (n_sample, n_in))
-#T = X ^ 1
 T = data[64:129] / 100
 
-
 #training time
+#any number can be set for iteration
 for epoch in range(6699):
 	err = []
 	err_mean = []
 	upd = [0] * len(params)
-	
+	#test the complexity speed
 	t0 = time.clock()
 	#for each data point, update our weights
 	for i in range(X.shape[0]):
@@ -113,12 +93,10 @@ for epoch in range(6699):
 			
 		err.append(loss)
 		err_mean.append(np.mean(loss))
-		
-		
+	#prints the error, iteration and time it takes for iter	
 	print('Epoch: %d, Loss: %.8f, Time: %.4fs'%(epoch, np.mean(err), time.clock()-t0))
 	
 # try to predict something
-#x = np.random.binomial(1, 0.5, n_in)
 x = data[167:168] / 100
 print('Lotto prediction')
 print(x)
