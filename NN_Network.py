@@ -75,7 +75,7 @@ T = data[64:129] / 100
 
 #training time
 #any number can be set for iteration
-for epoch in range(6699):
+for epoch in range(6699):#test with your own iterations
 	err = []
 	err_mean = []
 	upd = [0] * len(params)
