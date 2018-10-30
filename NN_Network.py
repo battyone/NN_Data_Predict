@@ -4,11 +4,11 @@ import time
 import matplotlib.pyplot as plt
 
 #hidden layer is set here
-n_hidden = 3
+n_hidden = 3 # set your own value
 #input value for x
-n_in = 5
+n_in = 5 # set your own value
 #output value for y
-n_out = 5
+n_out = 5 #set your own value
 #number of samples to test
 n_sample = 30
 
