@@ -13,8 +13,8 @@ n_out = 5
 n_sample = 30
 
 #learning rate can be set to anything
-learning_rate = 0.000003
-momentum = 0.00003
+learning_rate = 0.0003
+momentum = 0.003000
 
 #Sets the range of values for random
 np.random.seed(0)
