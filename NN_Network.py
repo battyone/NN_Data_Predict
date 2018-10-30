@@ -28,7 +28,7 @@ def sigmoid_prime(x):
 	return out * (1.0 - out)
 
 def tanh_prime(x):
-	return 1 - np.tanh(x)**2
+	return 1.0 - np.tanh(x)**2
 
 #input data, transpose, layer 1, layer 2, biases
 def train(x, t, V, W, bv, bw):
