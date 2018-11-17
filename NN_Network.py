@@ -28,7 +28,8 @@ is because, sigmoid function doesn't converge
 as fast as the other newer g(x)'s that are getting
 released with a better Time complexity. Although not necessarily true
 of such, as Sigmoid still continues to be a powerful way to compute
-excellent tangent lines - the poblem being"""
+excellent tangent lines - the poblem being that such only requires
+a better computation of the backprop we use, along with time complexity."""
 def sigmoid_prime(x):
 	out = sigmoid(x)
 	return out * (1.0 - out)
