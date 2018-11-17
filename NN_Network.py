@@ -26,7 +26,9 @@ def sigmoid(x):
 is not being used a lot any more. This
 is because, sigmoid function doesn't converge
 as fast as the other newer g(x)'s that are getting
-released with a better Time complexity. """
+released with a better Time complexity. Although not necessarily true
+of such, as Sigmoid still continues to be a powerful way to compute
+excellent tangent lines - the poblem being"""
 def sigmoid_prime(x):
 	out = sigmoid(x)
 	return out * (1.0 - out)
