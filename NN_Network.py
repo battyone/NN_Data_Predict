@@ -22,7 +22,11 @@ np.random.seed(0)
 #transfer functions
 def sigmoid(x):
 	return 1.0/(1.0 + np.exp(-x))
-
+""" it seems as sigmoid fucntion
+is not being used a lot any more. This
+is because, sigmoid function doesn't converge
+as fast as the other newer g(x)'s that are getting
+released with a better Time complexity. """
 def sigmoid_prime(x):
 	out = sigmoid(x)
 	return out * (1.0 - out)
