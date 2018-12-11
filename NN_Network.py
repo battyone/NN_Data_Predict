@@ -108,4 +108,3 @@ x = data[167:168] / 100
 print('Lotto prediction')
 print(x)
 print(predict(x, * params) * 100)
-#plt.plot(err)
