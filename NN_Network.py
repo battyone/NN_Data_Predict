@@ -4,7 +4,7 @@ import time
 import matplotlib.pyplot as plt
 
 #hidden layer is set here
-n_hidden = 3 # set your own value
+n_hidden = 3 # layer of nodes
 #input value for x
 n_in = 5 # set your own value
 #output value for y
